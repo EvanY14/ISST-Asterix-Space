@@ -16,9 +16,3 @@ import arviz as az
 import pymc as pm
 
 import ISST
-
-#-------------------------------------------------------------------------------
-# Define Risk Tables
-#-------------------------------------------------------------------------------
-
-Cost_Risk_Table = ISST.RiskTable(name='Cost',

@@ -1,6 +1,3 @@
 ,Minimum Schedule Impact,Maximum Schedule Impact,Most Likely Schedule Impact
-Workers Strike,0.0,0.0,0.0
-High Inflation,0.0,0.0,0.0
-Forced to be Domestic,0.0,0.0,0.0
-MMOD,0.0,0.0,0.0
-Structural Mass Overrun,0.0,0.0,0.0
+Workers Strike,6.0,24.0,12.0
+High Inflation,2.0,6.0,3.0
