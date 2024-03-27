@@ -3,12 +3,17 @@ from dataclasses import dataclass, field
 from pytensor.tensor.variable import TensorVariable
 from ISST import Risk, RiskTable
 
+from fpdf import FPDF
+
 import pymc as pm
 import numpy as np
 import pandas as pd
+import arviz as az
 
 import os
 from pathlib import Path
+
+from datetime import date
 @dataclass
 class DesignSystem:
     name: str = field(init=True)
@@ -126,12 +131,5 @@ class DesignSystem:
         return idata
 
 
-    def write_system_results(self, idata):
-        rootpath = os.getcwd()
-        report_path = Path(rootpath, f'{self.name} Analysis Report')
-        os.makedirs(report_path, exist_ok=True)
 
-        system_summary = az.plot_trace(idata, combined=True)
-        fig = system_summary.ravel()[0].figure
-        fig.savefig(Path(report_path, f'{self.name} System Summary.png'))
 
