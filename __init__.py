@@ -1,7 +1,7 @@
 from .DesignSystem import DesignSystem
 from .Risk import Risk
-from .RiskTable import RiskTable
+from .ImpactTable import ImpactTable
 
 from .Risks import *
-from .RiskTables import *
+from .ImpactTables import *
 from .Analysis import *

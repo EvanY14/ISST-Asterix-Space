@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 from pytensor.tensor.variable import TensorVariable
-from ISST import Risk, RiskTable
+from ISST import Risk, ImpactTable
 
 from fpdf import FPDF
 
@@ -23,13 +23,13 @@ class DesignSystem:
     model_context: pm.Model = field(init=True)
 
     # System-Wide Schedule Risk Table
-    schedule_risk_table: RiskTable = field(init=True)
+    schedule_risk_table: ImpactTable = field(init=True)
 
     # System-Wide Cost Risk Table
-    cost_risk_table: RiskTable = field(init=True)
+    cost_risk_table: ImpactTable = field(init=True)
 
     # System-Wide Technical Risk Tables
-    technical_risk_tables: list[RiskTable] = field(init=True)
+    technical_risk_tables: list[ImpactTable] = field(init=True)
 
     def __post_init__(self):
         assert self.schedule_risk_table is not None

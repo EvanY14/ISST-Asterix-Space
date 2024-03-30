@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 @dataclass
-class RiskTable:
+class ImpactTable:
     # Name of the Risk Table
     name: str = field(init=True)
     units: str = field(init=True)
