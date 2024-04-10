@@ -1,23 +1,42 @@
 import numpy as np
 from copy import deepcopy
 
-# Step 1: Set Stage Parameters as lists of numbers:
-#   Delta-V's (Dv)
-#   Structural Fractions (sigma),
-#   Specific impulses (Isp)
-#
-# Example (Numbers from Ariane 5 ECA Core & Second Stage:
-# Dv    = [3600.0,  2050.0]
-# sigma = [0.08,      0.23]
-# Isp   = [310.0,    446.0]
+def size_propellant_mass(mu,
+                         sigma,
+                         m_pl):
+    """
+    Determines the size of the propellant mass for a given structural ratio,
 
-def size_propellant_mass(mu, sigma, m_pl):
+    :param mu:      Mass ratio, mu = m_0/m_f
+    :param sigma:   Structural fraction, sigma = m_s/(m_s + m_p)
+    :param m_pl:    Payload mass, m_pl = m_0 - m_p - m_s
+    :return:        m_p:    Payload mass
+    """
     return m_pl * (mu - 1) * (1. - sigma) / (1 - mu * sigma)
 
-def size_structural_mass(m_p, sigma):
+def size_structural_mass(m_p,
+                         sigma):
+    """
+    Determines the structural mass for a given propellant mass and
+    structural fraction.
+
+    :param m_p:     Propellant mass, m_p = m_0 - m_pl - m_s
+    :param sigma:   Structural fraction, sigma = m_s/(m_s + m_p)
+    :return:        m_s:    Structural mass
+    """
     return m_p * sigma/(1 - sigma)
 
-def size_tank(V_p, d_i, AR = np.sqrt(2)):
+def size_tank(V_p,
+              d_i,
+              AR = np.sqrt(2)):
+    """
+    Sizes propellant tanks based on the volume of propellant and stage diameter.
+
+    :param V_p: Volume of propellant, V_p = m_p/rho_p
+    :param d_i: Stage diameter, d_i = 2 * r_i
+    :param AR:  Tank aspect ratio, AR = sqrt(2) for liquids, AR = 1 for solids
+    :return:    h_cyl: Cylinder height, dome_AR = 1 if spherical sizing is found
+    """
 
     r_i = d_i / 2.
 
@@ -31,7 +50,22 @@ def size_tank(V_p, d_i, AR = np.sqrt(2)):
 
     return h_cyl, dome_AR
 
-def size_accessories(dome_ARs, stage_diameters):
+def size_accessories(dome_ARs:np.ndarray,
+                     stage_diameters:np.ndarray):
+    """
+    Determines the size of booster accessories based on the staged dome ARs and
+    stage diameters.
+
+    :param dome_ARs:        NP Array of dome aspect ratios
+    :param stage_diameters: NP Array of stage diameters
+    :return:                dome_ARs:    Array of dome ARs
+                            stage_diameters: Array of stage diameters
+                            h_domes:         Array of dome heights
+                            h_plf:           Payload fairing height
+                            h_skirts:        Array of skirt heights
+                            h_intertank:     Array of intertank heights
+                            h_interstage:    Array of interstage heights
+    """
 
     h_domes         = (stage_diameters/2.) / dome_ARs
     h_plf           = stage_diameters[-1] * 2.
@@ -42,9 +76,15 @@ def size_accessories(dome_ARs, stage_diameters):
         if np.isclose(dome_ARs[ii], 1.):
             h_interstage[ii] = 1.25 * stage_diameters[ii]
 
-    return dome_ARs, stage_diameters, h_domes, h_plf, h_skirts, h_intertank
+    return dome_ARs, stage_diameters, h_domes, h_plf, h_skirts, h_intertank, h_interstage
 
 def wind_envelope(h):
+    """
+    Determines the AMR 95% maximum wind speed for a given height.
+
+    :param h:   Height/Altitude in kms
+    :return:    AMR 95% Wind Speed in m/s
+    """
 
     if h <= 9.6:
         v_w = 6.9228 * h + 9.144
