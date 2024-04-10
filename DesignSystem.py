@@ -3,8 +3,6 @@ from dataclasses import dataclass, field
 from pytensor.tensor.variable import TensorVariable
 from ISST import Risk, ImpactTable
 
-from fpdf import FPDF
-
 import pymc as pm
 import numpy as np
 import pandas as pd
@@ -35,15 +33,6 @@ class DesignSystem:
         assert self.schedule_risk_table is not None
         assert self.cost_risk_table is not None
         assert self.technical_risk_tables is not None
-
-        self.schedule_risk_levels = np.zeros(np.asarray(self.schedule_risk_table.utility_breakpoints).shape[0])
-        self.cost_risk_levels = np.zeros(np.asarray(self.cost_risk_table.utility_breakpoints).shape[0])
-
-        self.max_tech_risk_sizes = np.zeros((len(self.technical_risk_tables)))
-        mtrs = 0
-        for ii, risk_table in enumerate(self.technical_risk_tables):
-            mtrs = max(mtrs, np.asarray(risk_table.utility_breakpoints).shape[0])
-            self.max_tech_risk_sizes[ii] = mtrs
 
     def generate_system_specification(self):
 
