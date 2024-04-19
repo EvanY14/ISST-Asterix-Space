@@ -1,0 +1,15 @@
+Unnamed: 0,Minimum Power Impact,Maximum Power Impact,Most Likely Power Impact
+,,,
+Funding Delay,-1.0,-0.1,-0.1
+,,,
+Qualification Failure,-1.0,-0.1,-0.1
+,,,
+Cryocooler Failure,-1.0,-0.1,-0.1
+,,,
+Calibration Failure,-50.0,-1.0,-50.0
+,,,
+Mecahnisms Failure,-1200.0,-1.0,-20.0
+,,,
+Design Change,-1.0,-0.1,-0.1
+,,,
+Engine Delay,-1.0,-0.1,-0.1

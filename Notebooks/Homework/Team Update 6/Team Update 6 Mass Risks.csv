@@ -1,0 +1,15 @@
+Unnamed: 0,Minimum Mass Impact,Maximum Mass Impact,Most Likely Mass Impact
+,,,
+Funding Delay,0.1,1.0,0.1
+,,,
+Qualification Failure,0.1,1.0,0.1
+,,,
+Cryocooler Failure,0.1,1.0,0.1
+,,,
+Calibration Failure,0.1,1.0,0.1
+,,,
+Mecahnisms Failure,0.1,1.0,0.1
+,,,
+Design Change,-200.0,1000.0,1000.0
+,,,
+Engine Delay,0.1,1.0,0.1

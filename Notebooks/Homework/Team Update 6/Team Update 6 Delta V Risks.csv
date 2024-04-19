@@ -1,0 +1,15 @@
+Unnamed: 0,Minimum Delta V Impact,Maximum Delta V Impact,Most Likely Delta V Impact
+,,,
+Funding Delay,0.1,1.0,0.1
+,,,
+Qualification Failure,0.1,1.0,0.1
+,,,
+Cryocooler Failure,0.1,1.0,0.1
+,,,
+Calibration Failure,0.1,1.0,-0.1
+,,,
+Mecahnisms Failure,2162.0,-1.0,-216.20000000000002
+,,,
+Design Change,0.1,1.0,0.1
+,,,
+Engine Delay,-2162.0,-1.0,-216.20000000000002

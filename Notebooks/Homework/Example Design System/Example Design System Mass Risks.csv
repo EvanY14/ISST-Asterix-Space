@@ -1,15 +1,15 @@
 ,Minimum Mass Impact,Maximum Mass Impact,Most Likely Mass Impact
 ,,,
-Costs Need to be Spread Out,1000,1001,1000
+Costs Need to be Spread Out,0.1,1,0.1
 ,,,
-Components Fail During Qualification,1000,1001,1000
+Components Fail During Qualification,0.1,1,0.1
 ,,,
-GRS Cryocooler Failure,1000,1001,1000
+GRS Cryocooler Failure,0.1,1,0.1
 ,,,
-Sensor Calibration Fails,1000,1001,1000
+Sensor Calibration Fails,0.1,1,0.1
 ,,,
-Mecahnisms Fail to Deploy,1000,1001,1000
+Mecahnisms Fail to Deploy,0.1,1,0.1
 ,,,
-Assembly Requires Design Modifications,800,2000,2000
+Assembly Requires Design Modifications,-200,1000,1000
 ,,,
-Propulsion Maturity is Behind Expectations,1000,1001,1000
+Propulsion Maturity is Behind Expectations,0.1,1,0.1

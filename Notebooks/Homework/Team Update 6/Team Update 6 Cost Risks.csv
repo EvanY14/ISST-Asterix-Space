@@ -1,0 +1,15 @@
+Unnamed: 0,Minimum Cost Impact,Maximum Cost Impact,Most Likely Cost Impact
+,,,
+Funding Delay,0.8,51.0,9.5
+,,,
+Qualification Failure,0.66,16.27,4.0
+,,,
+Cryocooler Failure,0.02,0.2,0.1
+,,,
+Calibration Failure,1.1,45.0,15.0
+,,,
+Mecahnisms Failure,0.01,0.2,0.1
+,,,
+Design Change,0.1,15.0,15.0
+,,,
+Engine Delay,1.11,27.19,6.56

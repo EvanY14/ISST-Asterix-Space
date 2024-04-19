@@ -1,0 +1,15 @@
+Unnamed: 0,Minimum Schedule Impact,Maximum Schedule Impact,Most Likely Schedule Impact
+,,,
+Funding Delay,1.1,56.0,11.6
+,,,
+Qualification Failure,1.0,23.0,6.0
+,,,
+Cryocooler Failure,0.01,0.03,0.02
+,,,
+Calibration Failure,3.0,6.0,3.0
+,,,
+Mecahnisms Failure,1.4,3.0,3.0
+,,,
+Design Change,1.5,24.0,3.0
+,,,
+Engine Delay,1.0,26.0,6.0

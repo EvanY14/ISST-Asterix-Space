@@ -1,15 +1,15 @@
 ,Minimum GRS Temperature Impact,Maximum GRS Temperature Impact,Most Likely GRS Temperature Impact
 ,,,
-Costs Need to be Spread Out,30,31,30
+Costs Need to be Spread Out,0.1,1,0.1
 ,,,
-Components Fail During Qualification,30,31,30
+Components Fail During Qualification,0.1,1,0.1
 ,,,
-GRS Cryocooler Failure,80,300,188.5
+GRS Cryocooler Failure,50,270,150
 ,,,
-Sensor Calibration Fails,30,31,30
+Sensor Calibration Fails,0.1,1,0.1
 ,,,
-Mecahnisms Fail to Deploy,30,48,30
+Mecahnisms Fail to Deploy,0.1,20,0.1
 ,,,
-Assembly Requires Design Modifications,20,21,20
+Assembly Requires Design Modifications,0.1,1,0.1
 ,,,
-Propulsion Maturity is Behind Expectations,20,21,20
+Propulsion Maturity is Behind Expectations,0.1,1,0.1
